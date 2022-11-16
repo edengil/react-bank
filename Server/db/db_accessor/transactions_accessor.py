@@ -20,6 +20,11 @@ def query_insert_into_transactions(amount, vendor, categoryId, userId):
             (null, {amount}, '{vendor}', {categoryId}, {userId})
             """
 
+def query_delete_transaction(transactionId):
+    return f"""
+                DELETE FROM transactions
+                WHERE id = '{transactionId}'
+                """
 
 def add_transaaction(connection, amount, vendor, categoryId, userId):
     query = query_insert_into_transactions(amount, vendor, categoryId, userId)
@@ -35,3 +40,9 @@ def init_transactions_table(connection, transactions):
         userId = transaction["userId"]
         add_transaaction(connection, amount, vendor, categoryId, userId)
     print("initialized transactions table successfully")
+
+
+def remove_transaction(connection,transactionId):
+    query = query_delete_transaction(transactionId)
+    q.execute_query(connection, query)
+    
