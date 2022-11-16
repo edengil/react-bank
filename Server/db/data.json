@@ -1,0 +1,89 @@
+
+{
+    "users": [
+        { "name": "Oren Malach", "balance": 9830 },
+        {"name":"Eden Haim Gil", "balance":50780}],
+    "categories": [
+    { "name": "BBQ" },
+    { "name": "Gifts" },
+    { "name": "Food" },
+    { "name": "Salary" },
+    { "name": "Gaz" },
+    { "name": "Home" },
+    { "name": "Dog" }
+    ],
+    "transactions": [
+    {
+        "amount": 50,
+        "vendor": "Nafis",
+        "categoryId": 3,
+        "userId": 2
+    },
+    {
+        "amount": 499.9,
+        "vendor": "Super Pharm",
+        "categoryId": 2,
+        "userId": 1
+    },
+    {
+        "amount": 1500,
+        "vendor": "Rent",
+        "categoryId": 6,
+        "userId": 1
+    },
+    {
+        "amount": 279.9,
+        "vendor": "Shnow",
+        "categoryId": 7,
+        "userId": 2
+    },
+    {
+        "amount": 20,
+        "vendor": "chocolate",
+        "categoryId": 3,
+        "userId": 1
+    },
+    {
+        "amount": 489.9,
+        "vendor": "chocolate",
+        "categoryId": 3,
+        "userId": 2
+    },
+    {
+        "amount": 100,
+        "vendor": "Zara",
+        "categoryId": 1,
+        "userId": 1
+    },
+    {
+        "amount": 100,
+        "vendor": "Zara",
+        "categoryId": 1,
+        "userId": 1
+    },
+    {
+        "amount": 129.9,
+        "vendor": "Gaz",
+        "categoryId": 5,
+        "userId": 1
+    },    
+    {
+        "amount": 12900.9,
+        "vendor": "Salary",
+        "categoryId": 4,
+        "userId": 1
+    },
+    {
+        "amount": 2900,
+        "vendor": "Salary",
+        "categoryId": 4,
+        "userId": 2
+    },
+    {
+        "amount": 70,
+        "vendor": "Gaz",
+        "categoryId": 5,
+        "userId": 2
+    }
+    ]
+}
