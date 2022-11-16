@@ -1,5 +1,6 @@
 import pymysql
-from db_accessor import transactions_accessor
+import db.db_accessor.transactions_accessor as transactions_accessor
+
 connection = pymysql.connect(
     host="localhost", 
     user="root",

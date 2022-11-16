@@ -1,5 +1,5 @@
-import db_accessor.main_db_accessor as q
-
+# import main_db_accessor as q
+from db.db_accessor import main_db_accessor as q
 
 create_transactions_table = f"""
     CREATE TABLE IF NOT EXISTS transactions(
@@ -13,25 +13,25 @@ create_transactions_table = f"""
         );
     """
 
-def query_insert_into_transactions(amount, vendor,categoryId,userId):
+
+def query_insert_into_transactions(amount, vendor, categoryId, userId):
     return f"""
             INSERT INTO transactions VALUES
             (null, {amount}, '{vendor}', {categoryId}, {userId})
             """
 
-def add_transaaction(connection ,amount, vendor,categoryId,userId):
-    query = query_insert_into_transactions(amount, vendor,categoryId,userId)
-    q.execute_query(connection,query)
-  
+
+def add_transaaction(connection, amount, vendor, categoryId, userId):
+    query = query_insert_into_transactions(amount, vendor, categoryId, userId)
+    q.execute_query(connection, query)
+    print("add transactions successfully")
+
+
 def init_transactions_table(connection, transactions):
     for transaction in transactions:
         amount = transaction["amount"]
         vendor = transaction["vendor"]
         categoryId = transaction["categoryId"]
         userId = transaction["userId"]
-        add_transaaction(connection ,amount, vendor,categoryId,userId)
-        
+        add_transaaction(connection, amount, vendor, categoryId, userId)
     print("initialized transactions table successfully")
-    
-    
-    

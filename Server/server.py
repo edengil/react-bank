@@ -1,9 +1,8 @@
-from fastapi import FastAPI, Request, Response
-import uvicorn
 import requests
-from db.db_accessor import transactions_accessor
+import uvicorn
+from db import db_engine as db_engine
+from fastapi import FastAPI, Request, Response
 
-from db import db_engine
 app = FastAPI()
 
 
