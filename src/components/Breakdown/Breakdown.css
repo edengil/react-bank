@@ -1,0 +1,14 @@
+.red {
+    color: red;
+  }
+  
+  .green {
+    color: green;
+  }
+
+  .containerBreakdown {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  
+}
+  

@@ -1,4 +1,5 @@
-import db_accessor.main_db_accessor as q
+from db.db_accessor import main_db_accessor as q
+
 
 create_users_table = f"""
     CREATE TABLE IF NOT EXISTS users(
@@ -23,3 +24,11 @@ def init_users_table(connection, users):
         q.execute_query(connection,query)
     print("initialized users table successfully")
     
+    
+def update_balance(connection,user_id, add):
+    query = f"""
+        UPDATE users
+        SET balance = balance + {-1 * add}
+        WHERE id={user_id}
+    """
+    q.execute_query(connection,query)

@@ -1,14 +1,14 @@
 import requests
-import uvicorn
 from db import db_engine as db_engine
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Request, Response, status
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+from fastapi import FastAPI, Request, status, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:3000",
 ]
@@ -21,19 +21,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# rest of the routes
-
 
 @app.get("/transaction")
 async def get_all_transactions():
     # can return all the transactions
-    return db_engine.get_all_transactions_from_db()
+    return {"transactions":  db_engine.get_all_transactions_from_db()}
+
+@app.get("/transaction/{transactionId}")
+async def get_transaction(transactionId):
+    #return transaction by id
+    return db_engine.get_transaction_by_id(transactionId)
 
 
 @app.get("/categories")
 async def get_all_categories():
-    # can return all the categories
+    #return all the categories
     return db_engine.get_all_categories_from_db()
+
+
+@app.get("/categories/breakdown")
+async def get_categories_breakdown():
+    #return all the categories breakdown
+    return db_engine.get_categories_breakdown()
 
 
 @app.post("/transaction")
@@ -49,6 +58,12 @@ async def add_transaction(request: Request):
 def delete_transaction(transactionId):
     db_engine.remove_transaction(transactionId)
     return {"message": "transaction was removed successfully"}
+
+
+@app.get("/users/{id}")
+def get_user_balance(id):
+    user = db_engine.get_user(id)
+    return {"user": user}
 
 
 if __name__ == "__main__":

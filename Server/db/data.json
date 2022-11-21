@@ -17,7 +17,7 @@
         "amount": 50,
         "vendor": "Nafis",
         "categoryId": 3,
-        "userId": 2
+        "userId": 1
     },
     {
         "amount": 499.9,
@@ -35,7 +35,7 @@
         "amount": 279.9,
         "vendor": "Shnow",
         "categoryId": 7,
-        "userId": 2
+        "userId": 1
     },
     {
         "amount": 20,
@@ -47,7 +47,7 @@
         "amount": 489.9,
         "vendor": "chocolate",
         "categoryId": 3,
-        "userId": 2
+        "userId": 1
     },
     {
         "amount": 100,
@@ -77,13 +77,13 @@
         "amount": 2900,
         "vendor": "Salary",
         "categoryId": 4,
-        "userId": 2
+        "userId": 1
     },
     {
         "amount": 70,
         "vendor": "Gaz",
         "categoryId": 5,
-        "userId": 2
+        "userId": 1
     }
     ]
 }

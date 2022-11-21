@@ -42,6 +42,7 @@ def init_transactions_table(connection, transactions):
     print("initialized transactions table successfully")
 
 
+
 def remove_transaction(connection,transactionId):
     query = query_delete_transaction(transactionId)
     q.execute_query(connection, query)

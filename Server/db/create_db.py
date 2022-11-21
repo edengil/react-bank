@@ -6,6 +6,7 @@ from db_accessor import categories_accessor,users_accessor,transactions_accessor
 def create_db():
     connection = pymysql.connect(host="localhost", user="root", password="")
     try:
+        connection.ping()
         with connection.cursor() as cursor:
             cursor.execute(f"""
             DROP DATABASE IF EXISTS bank;
@@ -21,6 +22,7 @@ def create_db():
 def create_tables(connection):
 
     try:
+        connection.ping()
         with connection.cursor() as cursor:
             cursor.execute(users_accessor.create_users_table)
             print("create users table successfully")
