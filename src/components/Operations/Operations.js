@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Operations.css";
 import InitTransaction from "./InitTransaction"
 
 export default function Operations(props) {

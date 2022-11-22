@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import {BrowserRouter as Router,Route,Redirect,Switch,} from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Transactions from "./components/Transactions/Transactions";
 import Operations from "./components/Operations/Operations";
