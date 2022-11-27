@@ -13,7 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [balance, setBalance] = useState(0);
   const [userId, setUserId] = useState(0);
-  
+  //fix to fetchBalance and fetchUser
+
   async function fetchBalance() {
     const res = await axios.get(
       `http://localhost:8000/users/1`

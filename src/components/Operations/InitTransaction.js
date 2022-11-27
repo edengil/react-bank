@@ -28,6 +28,7 @@ export default function InsertTransaction(props) {
       });
     }
   
+  //fix submit to submit form 
     async function submit(e) {
       const form = e.currentTarget;
       e.preventDefault();

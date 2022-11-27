@@ -33,6 +33,8 @@ export default function Transactions(props) {
     await fetchTransactions();
     props.updateBalance();
   }
+
+  
   return (
     <Card style={{ width: "35rem" }}>
       <Card.Header as="h3">Transactions</Card.Header>
@@ -48,14 +50,3 @@ export default function Transactions(props) {
     </Card>
   );
 }
-
-
-// import React, { Component } from 'react'
-
-// export default class Transactions extends Component {
-//   render() {
-//     return (
-//       <div>Transactions</div>
-//     )
-//   }
-// }
